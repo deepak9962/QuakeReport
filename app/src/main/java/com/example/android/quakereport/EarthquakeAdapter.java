@@ -15,6 +15,7 @@
  */
 package com.example.android.quakereport;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.ContextCompat;
@@ -23,6 +24,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -203,6 +206,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     /**
      * Return the formatted date string (i.e. "Mar 3, 1984") from a Date object.
      */
+    @SuppressLint("SimpleDateFormat")
     private String formatDate(Date dateObject) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy");
         return dateFormat.format(dateObject);
@@ -211,6 +215,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     /**
      * Return the formatted date string (i.e. "4:30 PM") from a Date object.
      */
+    @SuppressLint("SimpleDateFormat")
     private String formatTime(Date dateObject) {
         SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
         return timeFormat.format(dateObject);
